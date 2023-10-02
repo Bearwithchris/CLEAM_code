@@ -1,7 +1,7 @@
 # CLEAM_code
 
-##Real_GAN (GAN)
-###1)Training attribute classifier
+## Real_GAN (GAN)
+### 1)Training attribute classifier
 a) Preparing the dataset
 > Download the dataset from https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html
 > Pepare a pre-processed version with the following source code.
@@ -23,7 +23,7 @@ python train_attribute_clf --class_idx 20
 python validate_acc.py --class_idx 20
 ```
 
-###2) Preparing data for real GAN
+### 2) Preparing data for real GAN
 > Download dataset from annonymous link https://drive.google.com/drive/folders/1ENslNLyK6EEG2qj5YLZ3Qu3rFijJWEqB?usp=sharing and copy them into ./Real_GAN/GeneratedData/*datasetName*/samples
 a)In Path ./Real_GAN/preprocess: Preprocess dataset to .npz format, edit dataDir for new dataset
 ```
@@ -31,7 +31,7 @@ python numpyData.py
 ```
 
 
-###3) Run CLEAM
+### 3) Run CLEAM
 a) In Path ./Real_GAN/CLEAM
 > Run for CLEAM approximation. Please edit attributeDict dictionary with the validated classifier's accuracy
 ```
@@ -40,18 +40,18 @@ python fairness_classifier_mturk_celebAHQ_StyleGAN_Resnet18.py
 
 
 
-##Real_GAN (DGM)
-###1) Download CelebA-HQ dataset
+## Real_GAN (DGM)
+### 1) Download CelebA-HQ dataset
 > Download dataset and 'CelebAMask-HQ-attribute-anno' from https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html
 
-###2) Evaluate CLIP's accuracy
+### 2) Evaluate CLIP's accuracy
 a)In path ./Real_GAN/CLEAM/CLIP
 >Change the labelpath and dataPath in the python script to your paths
 ```
 python celebAHQ_realsamples_labeller_measure_alpha.py
 ```
 
-###3) Evluate the DGM generated samples
+### 3) Evluate the DGM generated samples
 a)In path ./Real_GAN/CLEAM/CLIP
 > update the --acc to the measured accuracy in (2)
 > update the --dataPath to where the data is located
